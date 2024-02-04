@@ -12,7 +12,7 @@ const Login = () => {
      <View className='h-[75%]'>
       <Text className='font-bold text-4xl text-center mt-5 text-black'>Welcome back</Text>
       {
-        selectedAuth === "fingerprint" ? <Text>FingerPrint</Text> : selectedAuth === "faceid" ? <Text>Faceid</Text> : <Text>Pin</Text>
+        selectedAuth === "fingerprint" ? <Text>FingerPrint Two</Text> : selectedAuth === "faceid" ? <Text>Faceid</Text> : <Text>Pin</Text>
       }
      <AuthenticationComponent selectedAuth={selectedAuth} setSelectedAuth={setSelectedAuth} />
      </View>
