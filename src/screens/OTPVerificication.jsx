@@ -9,9 +9,7 @@ const OTPVerificication = () => {
 
       <Text className='my-5'>Please enter the OTP we sent you.</Text>
 
-    <OTPInputView 
-    pinCount={4}
-    />
+    <OTPInputView inCount={4}/>
 
     </View>
   )
