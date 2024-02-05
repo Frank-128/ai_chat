@@ -26,7 +26,6 @@ const OtpInput = () => {
       }
     }, 1000);
 
-    // Cleanup the interval on component unmount
     return () => clearInterval(countdownInterval);
   }, [timeRemaining]);
 
