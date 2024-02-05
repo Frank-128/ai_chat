@@ -1,16 +1,19 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import AuthenticationComponent from '../components/AuthenticationComponent'
 import FingerprintAuthentication from '../components/FingerprintAuthentication'
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [selectedAuth,setSelectedAuth] = useState("fingerprint")
-  
+
   return (
     <View className=''>
      <View className='h-[25%] bg-gray-400'>
 
      </View>
+     <TouchableOpacity onPress={()=>navigation.navigate('RecoverPin')}>
+      <Text>Me</Text>
+     </TouchableOpacity>
      <View className='h-[75%]'>
       <Text className='font-bold text-4xl text-center mt-5 text-black'>Welcome back</Text>
       {
