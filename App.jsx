@@ -15,13 +15,15 @@ const Stack = createStackNavigator()
 const App = () => {
   return (
     <NavigationContainer>
+
       <Stack.Navigator>
         <Stack.Screen component={Main} name='Main' />
         <Stack.Screen component={Login} name='Login' options={{ headerShown: false }} />
         <Stack.Screen component={HomePage} name="HomePage" />
-        {/* <Stack.Screen component={OTPVerificication} name='OTPVerification' /> */}
+         <Stack.Screen component={OTPVerificication} name='OTPVerification' /> 
         <Stack.Screen component={RecoverPin} name='RecoverPin' />
       </Stack.Navigator>
+
     </NavigationContainer>
   )
 }
