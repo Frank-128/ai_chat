@@ -31,7 +31,7 @@ const PinAuthentication = () => {
                     <TextInput
                         key={index}
                         ref={inputRefs[index]}
-                        className='w-12 h-12 border-2 rounded-md text-center text-2xl'
+                        className='w-12 h-12 border-2 rounded-md text-black text-center text-2xl'
                         keyboardType="numeric"
                         maxLength={1}
                         onChangeText={(text) => handleChange(text, index)}
