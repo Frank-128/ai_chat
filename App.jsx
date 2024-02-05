@@ -27,12 +27,12 @@ const App = () => {
           name="Login"
           options={{headerShown: false}}
         />
-         <Stack.Screen component={Main} name="Main" />
+        <Stack.Screen component={Main} name="Main" />
+        <Stack.Screen component={SendMoney} name="SendMoney" />
          <Stack.Screen component={ConfirmDetails} name="ConfirmDetails" />
         <Stack.Screen component={TransactionSuccess} name="TransactionSuccess" />
         <Stack.Screen component={TransactionFail} name="TransactionFail" />
        
-        <Stack.Screen component={SendMoney} name="SendMoney" />
 
         <Stack.Screen component={HomePage} name="HomePage" />
         <Stack.Screen component={OTPVerificication} name="OTPVerification" />

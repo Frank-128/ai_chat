@@ -9,7 +9,8 @@ import FaceIdAuthentication from '../components/FaceIdAuthentication'
 
 const Login = ({navigation}) => {
 
-  const [selectedAuth,setSelectedAuth] = useState("biometrics")
+  const [selectedAuth,setSelectedAuth] = useState("pin")
+  
 
 
 
@@ -32,7 +33,7 @@ const Login = ({navigation}) => {
          ? 
       <FaceIdAuthentication navigation={navigation}/>
         :
-         <PinAuthentication/>
+         <PinAuthentication navigation={navigation}   />
       }
       <Text className='text-xs text-center py-4 font-bold text-black'>Authentication option</Text>
 

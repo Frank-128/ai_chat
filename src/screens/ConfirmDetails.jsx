@@ -1,15 +1,23 @@
-import { View, Text,TextInput, Image } from 'react-native'
+import { View, Text,TextInput, Image, TouchableOpacity } from 'react-native'
 import React, { useState,useRef } from 'react'
 import AuthenticationComponent from '../components/AuthenticationComponent'
+import { useRoute } from '@react-navigation/native'
 
 const ConfirmDetails = ({navigation}) => {
-    const [selectedAuth,setSelectedAuth] = useState("biometrics")
-
+    const [selectedAuth,setSelectedAuth] = useState("pin")
+    const [pin,setPin] = useState(Array(4).fill(''))
+    const  [error,setError] = useState(false)
+    const route = useRoute()
     const numberOfDigits = 4; 
     const inputs = Array.from({ length: numberOfDigits }, () => useRef(null));
-
+    
+    const {value} = route.params
 
   const handlePINChange = (value, index) => {
+    let pinValues = [...pin];
+    pinValues[index] = value;
+    setPin(pinValues);
+
     if (value && index < numberOfDigits - 1) {
       inputs[index + 1].current.focus();
     }
@@ -30,9 +38,9 @@ const ConfirmDetails = ({navigation}) => {
       </View>
       <View className='px-10 justify-between flex-row'>
         <Text className='font-bold text-black'>amount</Text>
-        <Text className='text-black'>Bal. TZS 243,560/=</Text>
+        <Text className='text-black'>Bal. TZS 207,000/=</Text>
       </View>
-      <TextInput className='mx-10 mb-5 rounded-md border text-2xl'  keyboardType='numeric' value={'10,0000/='} />
+      <TextInput className='mx-10 mb-5 rounded-md border text-2xl'  keyboardType='numeric' value={String(value)} />
      
      {
         selectedAuth === "biometrics" ? <Image source={require('../assets/fingerprint_.png')} className='w-20 h-20 self-center' /> :<>
@@ -55,6 +63,23 @@ const ConfirmDetails = ({navigation}) => {
      } 
 
       <Text className='text-center font-bold text-black py-4'>Confirm payment by</Text>
+     
+     <TouchableOpacity onPress={()=>{
+         if(pin.join() == "1,2,3,4"){
+            navigation.navigate("TransactionSuccess")
+        }
+        else{
+            setError(true)
+        }
+     }}>
+
+        {    error && <Text className='text-red-500 text-center'>Wrong PIN please try again</Text>
+            }
+            
+
+        <Text className='border w-1/4 self-center text-center rounded-md text-black font-bold my-3 py-2 '>Submit</Text>
+     </TouchableOpacity>
+     
       <AuthenticationComponent selectedAuth={selectedAuth} setSelectedAuth={setSelectedAuth} />
     </View>
   )

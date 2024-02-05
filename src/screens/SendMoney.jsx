@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import {Button, Image, Text, TextInput, TouchableHighlight, TouchableOpacity, View} from "react-native";
 
-const SendMoney = () => {
+const SendMoney = ({navigation}) => {
     const [pressedIndex, setPressedIndex] = useState(null);
     const [receiverNumber, setReceiverNumber] = useState('');
     const [amountQty, setAmountQty] = useState('');
+    const [error,setError] = useState(false)
+
     const names = [
         {
             'name':'Erick',
@@ -30,19 +32,19 @@ const SendMoney = () => {
 
     const amounts = [
         {
-            'amount':'15,000'
+            'amount':15000
         },
         {
-            'amount':'30,000'
+            'amount':45000
         },
         {
-            'amount':'35,000'
+            'amount':56000
         },
         {
-            'amount':'24,000'
+            'amount':24000
         },
         {
-            'amount':'38,000'
+            'amount':38000
         },
     ];
     return (
@@ -105,8 +107,11 @@ const SendMoney = () => {
                     <Text className='text-black'>Bal. 207,000.00</Text>
                 </View>
                 <View className='w-[80%] '>
-                    <TextInput className='rounded-md border-2 border-gray-400 pl-2 '  value={amountQty} keyboardType='numeric' onChangeText={text => setAmountQty(text)}
+                    <TextInput className='rounded-md border-2 border-gray-400 pl-2 '  value={String(amountQty)} keyboardType='numeric' onChangeText={text => setAmountQty(text)}
                     />
+                    {
+                        error && <Text className='text-red-500 text-sm text-center '>No enough balance</Text>
+                    }
                 </View>
             </View>
             <View className='gap-2 '>
@@ -133,7 +138,13 @@ const SendMoney = () => {
                 <TouchableOpacity
                     className='items-center bg-white p-2 border-2 w-16 rounded-md'
                     onPress={() => {
-                        alert('Button pressed!');
+                      
+                        if(Number(amountQty) >207000){
+                            setError(true)
+                        }else{
+                            setError(false)
+                            navigation.navigate("ConfirmDetails",{value:amountQty})
+                        }
                     }}
                 >
                     <Text className='flex text-black font-bold'>Send</Text>

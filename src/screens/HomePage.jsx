@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native-gesture-handler'
 
 
 
-const HomePage = () => {
+const HomePage = ({navigation}) => {
   const [showBalance, setShowBalance] = React.useState(false)
 
   ArrayThatContainListOfShits = [
@@ -38,9 +38,9 @@ const HomePage = () => {
 
   return (
     <View className="p-4 gap-y-8">
-    {  !showBalance ? 
+    {  showBalance ? 
      <View className="w-full items-center gap-y-4">
-     <Text className="text-black font-bold text-3xl">TZS Couple Billions  </Text>
+     <Text className="text-black font-bold text-3xl">TZS 207,000/=  </Text>
    <TouchableOpacity  onPress ={()=>setShowBalance(!showBalance)} className="border flex-row items-center rounded p-1 gap-x-3">
      <FontAwesomeIcon icon={faEyeSlash} size={20} />
      <Text className="text-black font-bold text-xl">
@@ -84,22 +84,22 @@ const HomePage = () => {
           }
         </ScrollView>
       </View>
-      <View className="flex-row gap-x-6 justify-center w-full pt-8">
-        <TouchableOpacity>
-      <FontAwesomeIcon icon={faWallet} size={60} />
-      <Text className="text-black  text-lg">Send {'\n'}Money</Text>
+      <View className="flex-row   justify-between w-full pt-8">
+        <TouchableOpacity onPress={()=>navigation.navigate('SendMoney')}>
+      <FontAwesomeIcon icon={faWallet} size={45} />
+      <Text className="text-black  text-sm">Send {'\n'}Money</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-      <FontAwesomeIcon icon={faFileInvoiceDollar} size={60} />
-      <Text className="text-black   text-lg">Agent {'\n'}Withdraw</Text>
+      <FontAwesomeIcon icon={faFileInvoiceDollar} size={45} />
+      <Text className="text-black   text-sm">Agent {'\n'}Withdraw</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-      <FontAwesomeIcon icon={faBuildingColumns} size={60} />
-      <Text className="text-black  text-lg">Bank {'\n'}Withdraw</Text>
+      <FontAwesomeIcon icon={faBuildingColumns} size={45} />
+      <Text className="text-black  text-sm">Bank {'\n'}Withdraw</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-      <FontAwesomeIcon icon={faFileLines} size={60} />
-      <Text className="text-black f  text-lg">My{'\n'} Statement</Text>
+      <FontAwesomeIcon icon={faFileLines} size={45} />
+      <Text className="text-black f  text-sm">My{'\n'} Statement</Text>
         </TouchableOpacity>
 
       </View>

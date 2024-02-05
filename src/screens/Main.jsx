@@ -26,7 +26,7 @@ const Main = ({ navigation }) => {
         component={HomePage}
         name="Home"
         options={{
-          tabBarIcon: () => <FontAwesomeIcon icon={faHouse} size={40} />,
+          tabBarIcon: () => <FontAwesomeIcon icon={faHouse} size={24} />,
           header: () => <Header />
 
           ,
@@ -35,7 +35,7 @@ const Main = ({ navigation }) => {
             paddingVertical: 10,
           },
           tabBarLabelStyle: {
-            fontSize: 24,
+            fontSize: 16,
             
 
           },
@@ -50,7 +50,7 @@ const Main = ({ navigation }) => {
         name="Bundle"
         options={{
           tabBarIcon: () => <FontAwesomeIcon
-            icon={faPuzzlePiece} size={40} />,
+            icon={faPuzzlePiece} size={24} />,
           header: () => <Header />
           ,
           tabBarStyle: {
@@ -58,7 +58,7 @@ const Main = ({ navigation }) => {
             paddingVertical: 10,
           },
           tabBarLabelStyle: {
-            fontSize: 24,
+            fontSize: 16,
           },
           tabBarActiveTintColor: 'blue',
           tabBarInactiveTintColor: 'black',
@@ -68,14 +68,14 @@ const Main = ({ navigation }) => {
         component={Services}
         name="Services"
         options={{
-          tabBarIcon: () => <FontAwesomeIcon icon={faCube} size={40} />, header: () => <Header />
+          tabBarIcon: () => <FontAwesomeIcon icon={faCube} size={24} />, header: () => <Header />
           ,
           tabBarStyle: {
             height: 90,
             paddingVertical: 10,
           },
           tabBarLabelStyle: {
-            fontSize: 24,
+            fontSize: 16,
 
           },
           tabBarActiveTintColor: 'blue',
@@ -86,14 +86,14 @@ const Main = ({ navigation }) => {
         component={Account}
         name="Account"
         options={{
-          tabBarIcon: () => <FontAwesomeIcon icon={faUser} size={40} />, header: () => <Header />
+          tabBarIcon: () => <FontAwesomeIcon icon={faUser} size={24} />, header: () => <Header />
           ,
           tabBarStyle: {
             height: 90,
             paddingVertical: 10,
           },
           tabBarLabelStyle: {
-            fontSize: 24,
+            fontSize: 16,
 
           },
           tabBarActiveTintColor: 'blue',
