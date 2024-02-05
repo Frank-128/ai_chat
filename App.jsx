@@ -13,8 +13,6 @@ import SendMoney from "./src/screens/SendMoney";
 const Stack = createStackNavigator()
 
 
-const Stack = createStackNavigator();
-
 const App = () => {
   return (
     <NavigationContainer>
