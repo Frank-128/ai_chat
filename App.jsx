@@ -10,7 +10,6 @@ import HomePage from './src/screens/HomePage'
 import SendMoney from "./src/screens/SendMoney";
 
 
-const Stack = createStackNavigator()
 
 
 const Stack = createStackNavigator();
@@ -21,9 +20,9 @@ const App = () => {
 
 
       <Stack.Navigator>
-           <Stack.Screen component={SendMoney} name="SendMoney" />
         <Stack.Screen component={Main} name='Main' />
         <Stack.Screen component={Login} name='Login' options={{ headerShown: false }} />
+        <Stack.Screen component={SendMoney} name="SendMoney" />
         <Stack.Screen component={HomePage} name="HomePage" />
          <Stack.Screen component={OTPVerificication} name='OTPVerification' /> 
         <Stack.Screen component={RecoverPin} name='RecoverPin' />
