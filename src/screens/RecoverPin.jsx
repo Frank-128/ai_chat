@@ -1,5 +1,6 @@
 import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import React, { useLayoutEffect } from 'react'
+import Login from "./Login";
 
 const RecoverPin = ({navigation}) => {
     
@@ -10,7 +11,7 @@ const RecoverPin = ({navigation}) => {
             },
             headerTintColor: 'white',
             headerLeft:()=>
-            <TouchableOpacity onPress={()=>navigation.goBack()}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
     
             <View>
               <Text>Back</Text>

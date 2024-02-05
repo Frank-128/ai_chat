@@ -2,6 +2,7 @@ import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 import AuthenticationComponent from '../components/AuthenticationComponent'
 import FingerprintAuthentication from '../components/FingerprintAuthentication'
+import PinAuthentication from "../components/PinAuthentication";
 
 const Login = () => {
   const [selectedAuth,setSelectedAuth] = useState("fingerprint")
@@ -14,9 +15,9 @@ const Login = () => {
      <View className='h-[75%]'>
       <Text className='font-bold text-4xl text-center mt-5 text-black'>Welcome back</Text>
       {
-        selectedAuth === "fingerprint" ? <FingerprintAuthentication/> : selectedAuth === "faceid" ? <Text>Faceid</Text> : <Text>Pin</Text>
+        selectedAuth === "fingerprint" ? <FingerprintAuthentication/> : selectedAuth === "faceid" ? <Text>Faceid</Text> : <PinAuthentication/>
       }
-      <Text className='text-xs text-center my-2 font-bold'>Authentication option</Text>
+      <Text className='text-xs text-center text-black my-2 font-bold'>Authentication option</Text>
      <AuthenticationComponent selectedAuth={selectedAuth} setSelectedAuth={setSelectedAuth} />
      </View>
     </View>
