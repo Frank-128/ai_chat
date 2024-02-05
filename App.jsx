@@ -5,14 +5,16 @@ import Main from './src/screens/Main';
 import {NavigationContainer} from '@react-navigation/native';
 import RecoverPin from './src/screens/RecoverPin';
 import OTPVerificication from './src/screens/OTPVerificication';
+import SendMoney from "./src/screens/SendMoney";
 
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-          <Stack.Screen
+        <Stack.Navigator>
+            <Stack.Screen component={SendMoney} name="SendMoney" />
+            <Stack.Screen
               component={Login}
               name="Login"
               options={{headerShown: false}}
