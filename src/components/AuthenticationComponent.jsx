@@ -7,9 +7,9 @@ const AuthenticationComponent = ({ selectedAuth, setSelectedAuth }) => {
   return (
     <View className='border rounded-md flex-row w-[80%] self-center'>
      
-      <TouchableOpacity className={`border px-2 py-3  w-1/2 rounded-md ${selectedAuth === "faceid" ? 'bg-black' : ''}`} onPress={() => setSelectedAuth("faceid")}>
+      <TouchableOpacity className={`border px-2 py-3  w-1/2 rounded-md ${selectedAuth === "biometrics" ? 'bg-black' : ''}`} onPress={() => setSelectedAuth("biometrics")}>
 
-        <Text className={`text-center text-black ${selectedAuth === "faceid" ? ' text-white' : ''}`}  >Biometrics</Text>
+        <Text className={`text-center text-black ${selectedAuth === "biometrics" ? ' text-white' : ''}`}  >Biometrics</Text>
       </TouchableOpacity>
       <TouchableOpacity className={`border px-2 py-3  w-1/2 rounded-md ${selectedAuth === "pin" ? 'bg-black text-white' : ''}`} onPress={() => setSelectedAuth("pin")}>
 

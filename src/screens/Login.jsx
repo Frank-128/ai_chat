@@ -6,7 +6,7 @@ import FaceIdAuthentication from '../components/FaceIdAuthentication'
 
 const Login = ({navigation}) => {
 
-  const [selectedAuth,setSelectedAuth] = useState("fingerprint")
+  const [selectedAuth,setSelectedAuth] = useState("biometrics")
 
 
   return (
