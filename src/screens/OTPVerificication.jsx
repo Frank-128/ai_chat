@@ -22,7 +22,7 @@ const OtpInput = () => {
       } else {
         clearInterval(countdownInterval);
         // You can add additional logic here when the countdown reaches zero
-        console.log('Countdown finished!');
+        
       }
     }, 1000);
 

@@ -37,7 +37,7 @@ const PinAuthentication = ({navigation}) => {
         }
     };
 
-    console.log(otp)
+    
     return (
         <View className='gap-4'>
             <Text className='text-center font-bold text-black'>Please enter your PIN</Text>
